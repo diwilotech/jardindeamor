@@ -360,12 +360,20 @@ a:focus-visible, button:focus-visible, .form-range:focus-visible{outline:3px sol
 .btn-whatsapp-float:hover{animation-play-state:paused;transform:scale(1.06);}
 @keyframes waPulse{0%,100%{box-shadow:0 10px 26px rgba(52,199,89,.45);}50%{box-shadow:0 10px 30px rgba(52,199,89,.7);}}
 
-.btn-top{position:fixed;right:22px;bottom:90px;width:46px;height:46px;border-radius:50%;background:var(--negro);color:#fff;border:none;box-shadow:0 8px 20px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(10px);transition:all .25s ease;z-index:1040;display:flex;align-items:center;justify-content:center;}
+/* Pila de redes sociales junto al botón de WhatsApp */
+.social-float-stack{position:fixed;right:22px;bottom:90px;display:flex;flex-direction:column;gap:.6rem;align-items:center;z-index:1039;}
+.social-float-stack .social-icon{width:44px;height:44px;}
+.social-float-stack .social-icon svg{width:20px;height:20px;}
+
+.btn-top{position:fixed;left:22px;bottom:22px;width:46px;height:46px;border-radius:50%;background:var(--negro);color:#fff;border:none;box-shadow:0 8px 20px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(10px);transition:all .25s ease;z-index:1040;display:flex;align-items:center;justify-content:center;}
 .btn-top.show{opacity:1;visibility:visible;transform:translateY(0);}
 .btn-top:hover{background:var(--verde-deep);}
 
 @media (max-width:575px){
   .btn-whatsapp-float{width:52px;height:52px;right:16px;bottom:16px;}
-  .btn-top{width:42px;height:42px;right:18px;bottom:78px;}
+  .social-float-stack{right:16px;bottom:74px;gap:.5rem;}
+  .social-float-stack .social-icon{width:40px;height:40px;}
+  .social-float-stack .social-icon svg{width:18px;height:18px;}
+  .btn-top{width:42px;height:42px;left:16px;bottom:16px;}
   .float-icon{display:none;}
 }
